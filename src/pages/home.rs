@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use super::header::Header;
+use crate::components::Header;
 
 pub struct HomePage {
     link: ComponentLink<Self>
@@ -18,7 +18,7 @@ impl Component for HomePage {
         Self { link }
     }
 
-    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
         false
     }
 

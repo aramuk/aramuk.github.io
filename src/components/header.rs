@@ -17,7 +17,7 @@ impl Component for Header {
         Self { link }
     }
 
-    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, _msg: Self::Message) -> ShouldRender {
         false
     }
 
@@ -31,7 +31,7 @@ impl Component for Header {
     fn view(&self) -> Html {
         html! {
             <header>
-                <div class="name">
+                <div class="title">
                     <h1>{"Aditesh Kumar"}</h1>
                 </div>
                 <div class="navigation">

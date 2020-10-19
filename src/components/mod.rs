@@ -1,2 +1,3 @@
-pub mod home;
-pub mod header;
+mod header;
+
+pub use header::Header;
