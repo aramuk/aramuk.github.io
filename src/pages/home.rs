@@ -3,7 +3,7 @@ use yew::prelude::*;
 use crate::components::Header;
 
 pub struct HomePage {
-    link: ComponentLink<Self>
+    link: ComponentLink<Self>,
 }
 
 pub enum Msg {

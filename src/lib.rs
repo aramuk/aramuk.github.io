@@ -4,8 +4,8 @@ use wasm_bindgen::prelude::*;
 use yew::prelude::*;
 
 mod app;
-mod pages;
 mod components;
+mod pages;
 
 #[wasm_bindgen(start)]
 pub fn run_app() {

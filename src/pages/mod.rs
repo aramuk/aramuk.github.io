@@ -1,5 +1,5 @@
-mod home;
 mod error;
+mod home;
 
-pub use home::HomePage;
 pub use error::ErrorPage;
+pub use home::HomePage;

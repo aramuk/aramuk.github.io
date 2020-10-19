@@ -19,7 +19,7 @@ impl Component for ErrorPage {
     type Properties = Props;
 
     fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self { 
+        Self {
             link,
             error: props.error,
         }
@@ -49,8 +49,8 @@ impl Component for ErrorPage {
 impl ErrorPage {
     fn display_error(&self) -> Html {
         if let Some(error) = &self.error {
-            return html! { <p><b>{error}</b></p> }
+            return html! { <p><b>{error}</b></p> };
         }
-        return html! {}
+        return html! {};
     }
 }

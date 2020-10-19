@@ -1,7 +1,7 @@
 use yew::prelude::*;
 
 pub struct Header {
-    link: ComponentLink<Self>
+    link: ComponentLink<Self>,
 }
 
 pub enum Msg {
