@@ -1,2 +1,7 @@
 /target
 Cargo.lock
+
+# Only include HTML and CSS from /styles
+/static/*
+!/static/index.html
+!/static/styles
