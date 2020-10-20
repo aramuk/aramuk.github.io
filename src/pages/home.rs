@@ -31,7 +31,9 @@ impl Component for HomePage {
 
     fn view(&self) -> Html {
         html! {
-            <Header />
+            <div>
+                <Header />    
+            </div>
         }
     }
 }

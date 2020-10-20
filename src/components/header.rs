@@ -1,4 +1,5 @@
 use yew::prelude::*;
+use crate::components::NavLink;
 
 pub struct Header {
     link: ComponentLink<Self>,
@@ -35,9 +36,8 @@ impl Component for Header {
                     <h1>{"Aditesh Kumar"}</h1>
                 </div>
                 <div class="navigation">
-                    <div class="section-link">{"Projects"}</div>
-                    <div class="section-link">{"Experience"}</div>
-                    <div class="section-link">{"Links"}</div>
+                    <NavLink link_text="Projects" section_id="#projects" />
+                    <NavLink link_text="Contact" section_id="#contact" />
                 </div>
             </header>
         }
