@@ -38,11 +38,11 @@ impl Component for NavLink {
 
     fn view(&self) -> Html {
         html! {
-            <div class="section-link">
+            <li class="section-link">
                 <a href={self.section_id.clone()}>
                     {self.link_text.clone()}
                 </a>
-            </div>
+            </li>
         }
     }
 }

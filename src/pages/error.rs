@@ -30,18 +30,15 @@ impl Component for ErrorPage {
     }
 
     fn change(&mut self, _props: Self::Properties) -> ShouldRender {
-        // Should only return "true" if new properties are different to
-        // previously received properties.
-        // This component has no properties so we will always return "false".
         false
     }
 
     fn view(&self) -> Html {
         html! {
-            <div>
+            <main>
                 <h1>{"Error Page"}</h1>
                 {self.display_error()}
-            </div>
+            </main>
         }
     }
 }

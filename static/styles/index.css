@@ -1,29 +1,88 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
 
 html {
     overflow-x: none;
     overflow-y: scroll;
+    --white: #f7f7f7;
+    --dark-blue: #094e7f;
+    --blue-0: #1277b8;
+    --blue-1: #1ca3fb;
+    --blue-2: #5cc2fb;
+    --green-0: #2fe7ce;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Space Mono', monospace;
-    color: #f7f7f7;
+    font-family: "Space Mono", monospace;
+    font-size: 18px;
+    color: var(--white);
 }
 
 header {
     width: 100vw;
-    height: 25px;
+    position: fixed;
+    top: 0;
 }
 
 .title {
     margin: 0;
-    padding: 5px 0 5px 5vw;
+    padding: 0 0 0 5vw;
     width: 100%;
-    background-color: #094e7f;
+    background-color: var(--dark-blue);
+    height: 4rem;
+    max-height: 4rem;
+    line-height: 4rem;
+    vertical-align: middle;
+}
+.title h1 {
+    margin: 0;
 }
 
 .navigation {
+    margin: 0 4rem 0 -1rem;
+}
+.navigation ul {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    overflow: hidden;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 2rem;
+    max-height: 2rem;
+    line-height: 2rem;
+    vertical-align: middle;
+}
+
+.section-link {
+    text-align: center;
+    transform: skew(-45deg);
+    flex: 1;
+}
+.section-link:nth-child(2n + 1) {
+    background-color: var(--blue-0);
+}
+.section-link:nth-child(2n + 2) {
+    background-color: var(--blue-1);
+}
+.section-link:nth-child(3n) {
+    background-color: var(--blue-2);
+}
+.section-link a {
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+    transform: skew(45deg);
+}
+.triangle {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 6rem solid var(--green-0);
+    border-left: 6rem solid transparent;
 }

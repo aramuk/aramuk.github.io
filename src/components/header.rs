@@ -23,9 +23,6 @@ impl Component for Header {
     }
 
     fn change(&mut self, _props: Self::Properties) -> ShouldRender {
-        // Should only return "true" if new properties are different to
-        // previously received properties.
-        // This component has no properties so we will always return "false".
         false
     }
 
@@ -35,10 +32,14 @@ impl Component for Header {
                 <div class="title">
                     <h1>{"Aditesh Kumar"}</h1>
                 </div>
-                <div class="navigation">
-                    <NavLink link_text="Projects" section_id="#projects" />
-                    <NavLink link_text="Contact" section_id="#contact" />
-                </div>
+                <nav class="navigation">
+                    <ul>
+                        <NavLink link_text="Projects" section_id="#projects" />
+                        <NavLink link_text="Experience" section_id="#experience" />
+                        <NavLink link_text="Contact" section_id="#contact" />
+                    </ul>
+                </nav>
+                <div class="triangle"></div>
             </header>
         }
     }

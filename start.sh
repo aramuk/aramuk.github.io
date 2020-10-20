@@ -6,6 +6,6 @@ if [[ -z "$COMPILER_ERRORS" ]]; then
     cd ./static && python3 -m http.server $PORT &> /dev/null &
     pid=$!
     sleep 1
-    open "http://localhost:$PORT"
+    open "http://localhost:${PORT}"
     kill "${pid}"
 fi
