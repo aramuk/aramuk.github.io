@@ -1,28 +1,25 @@
 use yew::prelude::*;
 use yew::Properties;
 
-pub struct ErrorPage {
-    link: ComponentLink<Self>,
-    error: Option<String>,
-}
-
-pub struct Msg {}
-
 #[derive(Properties, Clone, PartialEq)]
 pub struct Props {
     #[prop_or_default]
     pub error: Option<String>,
 }
 
+pub struct ErrorPage {
+    link: ComponentLink<Self>,
+    props: Props,
+}
+
+pub struct Msg {}
+
 impl Component for ErrorPage {
     type Message = Msg;
     type Properties = Props;
 
     fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self {
-            link,
-            error: props.error,
-        }
+        Self { link, props }
     }
 
     fn update(&mut self, _msg: Self::Message) -> ShouldRender {
@@ -37,17 +34,10 @@ impl Component for ErrorPage {
         html! {
             <main>
                 <h1>{"Error Page"}</h1>
-                {self.display_error()}
+                {if let Some(error) = &self.props.error {
+                    html! { <p><b>{error}</b></p> }
+                } else { html!{} }}
             </main>
         }
-    }
-}
-
-impl ErrorPage {
-    fn display_error(&self) -> Html {
-        if let Some(error) = &self.error {
-            return html! { <p><b>{error}</b></p> };
-        }
-        return html! {};
     }
 }

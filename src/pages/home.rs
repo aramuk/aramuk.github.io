@@ -1,6 +1,7 @@
 use yew::prelude::*;
 
 use crate::components::Header;
+use crate::components::Banner;
 
 pub struct HomePage {
     link: ComponentLink<Self>,
@@ -28,9 +29,16 @@ impl Component for HomePage {
 
     fn view(&self) -> Html {
         html! {
-            <main>
-                <Header />    
-            </main>
+            <>
+                <Header />
+                <main>
+                <Banner
+                    title="${JOB_TITLE}" 
+                    subtitle="${EMPLOYER}"
+                    image="./images/lake_tahoe.jpeg" 
+                />
+                </main>
+            </>
         }
     }
 }

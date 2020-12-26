@@ -1,5 +1,5 @@
-use yew::prelude::*;
 use crate::components::NavLink;
+use yew::prelude::*;
 
 pub struct Header {
     link: ComponentLink<Self>,
