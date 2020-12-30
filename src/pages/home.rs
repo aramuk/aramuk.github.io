@@ -69,11 +69,30 @@ impl Component for HomePage {
                     />
                     <Section 
                         id="about"
-                        title="About Me"
+                        title="Who am I?"
                         columns={1}
                         rows={1}
                     >
-                        <p>{"Who am I?"}</p>
+                        <div>
+                            <p>{"I'd prefer to have Google work a little bit harder to find out, but you can find some relevant links below."}</p>
+                            <div class="contact-links">
+                                <div>
+                                    <a href="https://www.github.com/aramuk">
+                                        <span class="fa fa-github"></span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="https://www.linkedin.com/in/aditeshk">
+                                        <span class="fa fa-linkedin-square"></span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="mailto:aditeshk@uci.edu">
+                                        <span class="fa fa-envelope"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </Section>
                     <Section 
                         id="projects"

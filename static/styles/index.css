@@ -29,7 +29,7 @@ header {
     vertical-align: middle;
 }
 
-div {
+div, h1, h2, h3, h4, p {
     margin: 0;
     padding: 0;
 }
@@ -41,8 +41,10 @@ div {
 .title h1 {
     height: 2rem;
     line-height: 2rem;
+    font-size: 1.5rem;
     vertical-align: middle;
     margin: 0;
+    cursor: default;
 }
 
 .navigation {
@@ -74,6 +76,7 @@ div {
 .section-link {
     height: 2rem;
     line-height: 2rem;
+    /* font-size: 2rem; */
     vertical-align: middle;
     text-align: center;
     transform: skew(-45deg);
@@ -111,21 +114,13 @@ div {
     line-height: 2rem;
     vertical-align: middle;
 }
-.triangle {
-    position: absolute;
-    z-index: 3;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-bottom: 6rem solid var(--pink-0);
-    border-left: 6rem solid transparent;
+.section-link a h3:hover {
+    font-size: 1.05rem;
 }
 
 .banner {
     width: 100%;
-    /* position: absolute;
-    top: 0; */
+    /* margin-bottom: -0rem; */
 }
 .banner img {
     width: 100%;
@@ -151,4 +146,42 @@ div {
 }
 .banner-title h4 {
     font-size: 1rem;
+}
+
+.section {
+    background-color: var(--white);
+    color: var(--gray);
+    padding: 1rem 20% 1rem 20%;
+}
+
+.section-title {
+    text-align: left;
+    border-left: 3px var(--pink-2) solid;
+    padding: 0 0 0 1.5rem;
+}
+
+.section-grid {
+    margin: 0 10% 0 10%;
+}
+
+.contact-links {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: space-between;
+    margin: 1rem 20% 0 20%;
+}
+.contact-links > div {
+    flex: 1;
+}
+.contact-links a {
+    text-align: center;
+    width: 2rem;
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 1.75rem;
 }
