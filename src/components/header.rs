@@ -1,45 +1,52 @@
 use crate::components::NavLink;
 use yew::prelude::*;
 
-pub struct Header {
-    link: ComponentLink<Self>,
+#[derive(Properties, Clone, PartialEq)]
+pub struct Props {
+    pub background: bool,
 }
 
-pub enum Msg {
-    StickHeader,
-    ReleaseHeader,
+pub struct Header {
+    link: ComponentLink<Self>,
+    props: Props,
 }
+
+pub enum Msg {}
 
 impl Component for Header {
     type Message = Msg;
-    type Properties = ();
+    type Properties = Props;
 
-    fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self { link }
+    fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
+        Self { 
+            link,
+            props,
+        }
     }
 
     fn update(&mut self, _msg: Self::Message) -> ShouldRender {
         false
     }
 
-    fn change(&mut self, _props: Self::Properties) -> ShouldRender {
-        false
+    fn change(&mut self, props: Self::Properties) -> ShouldRender {
+        if self.props != props {
+            self.props = props;
+            true
+        } else {
+            false
+        }
     }
 
     fn view(&self) -> Html {
         html! {
             <header>
-                <div class="title">
-                    <h1>{"Aditesh Kumar"}</h1>
-                </div>
-                <nav class="navigation">
+                <nav class={if self.props.background { "navigation bg" } else { "navigation" } }>
                     <ul>
-                        <NavLink link_text="Projects" section_id="#projects" />
-                        <NavLink link_text="Experience" section_id="#experience" />
-                        <NavLink link_text="Contact" section_id="#contact" />
+                        <NavLink link_text="Aditesh Kumar" section_id="/" background={self.props.background} title={true} />
+                        <NavLink link_text="About" section_id="#about" background={self.props.background} title={false} />
+                        <NavLink link_text="Projects" section_id="#projects" background={self.props.background} title={false} />
                     </ul>
                 </nav>
-                <div class="triangle"></div>
             </header>
         }
     }

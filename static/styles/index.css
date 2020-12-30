@@ -24,6 +24,9 @@ header {
     position: fixed;
     top: 0;
     z-index: 5;
+    height: 4rem;
+    line-height: 4rem;
+    vertical-align: middle;
 }
 
 div {
@@ -32,48 +35,67 @@ div {
 }
 
 .title {
-    margin: 0;
-    padding: 0 0 0 5vw;
-    width: 100%;
-    background-color: var(--gray);
-    height: 4rem;
-    max-height: 4rem;
-    line-height: 4rem;
-    vertical-align: middle;
+    flex: 2;
+    /* padding: 0 2rem 0 2rem; */
 }
 .title h1 {
+    height: 2rem;
+    line-height: 2rem;
+    vertical-align: middle;
     margin: 0;
 }
 
 .navigation {
-    margin: 0 4rem 0 -1rem;
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    top: 0;
+    height: 4rem;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.5s ease;
+}
+.navigation.bg {
+    background-color: var(--gray);
 }
 .navigation ul {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto;
+    grid-gap: 0;
     overflow: hidden;
     list-style-type: none;
-    margin: 0;
     padding: 0;
+    margin: 1rem 0 1rem -2%;
+}
+.navigation ul:first-child {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.section-link {
     height: 2rem;
-    max-height: 2rem;
     line-height: 2rem;
     vertical-align: middle;
-}
-
-.section-link {
     text-align: center;
     transform: skew(-45deg);
+    transition: background-color 0.5s ease;
     flex: 1;
 }
 .section-link:nth-child(2n + 1) {
-    background-color: var(--pink-3);
+    background-color: rgba(0, 0, 0, 0);
 }
 .section-link:nth-child(2n + 2) {
-    background-color: var(--pink-2);
+    background-color: rgba(0, 0, 0, 0);
 }
 .section-link:nth-child(3n) {
+    background-color: rgba(0, 0, 0, 0);
+}
+.section-link.bg:nth-child(2n + 1) {
+    background-color: var(--pink-3);
+}
+.section-link.bg:nth-child(2n + 2) {
+    background-color: var(--pink-2);
+}
+.section-link.bg:nth-child(3n) {
     background-color: var(--pink-1);
 }
 .section-link a {
@@ -81,6 +103,13 @@ div {
     color: var(--white);
     text-decoration: none;
     transform: skew(45deg);
+}
+.section-link a h3 {
+    margin: 0;
+    font-size: 1rem;
+    height: 2rem;
+    line-height: 2rem;
+    vertical-align: middle;
 }
 .triangle {
     position: absolute;
@@ -95,8 +124,8 @@ div {
 
 .banner {
     width: 100%;
-    position: absolute;
-    top: 0;
+    /* position: absolute;
+    top: 0; */
 }
 .banner img {
     width: 100%;

@@ -1,12 +1,16 @@
-use crate::pages::*;
-
 use yew::prelude::*;
 use yew_router::{prelude::*, switch::Permissive, Switch};
+
+use crate::pages::*;
 
 #[derive(Debug, Switch, Clone)]
 pub enum AppRoute {
     #[to = "/!"]
     Home,
+    #[to="/#about"]
+    About,
+    #[to="/#projects"]
+    Projects,
     #[to = "/error"]
     NotFound(Permissive<String>),
 }
@@ -43,7 +47,7 @@ impl Component for Model {
             <Router<AppRoute, ()>
                 render = Router::render(move |route: AppRoute| {
                     match route {
-                        AppRoute::Home => html!{<HomePage />},
+                        AppRoute::Home | AppRoute::About | AppRoute::Projects => html!{<HomePage />},
                         AppRoute::NotFound(Permissive(None)) => html!{<ErrorPage />},
                         AppRoute::NotFound(Permissive(Some(missed_route))) => html!{<ErrorPage error=missed_route />},
                         _ => html! {<ErrorPage />},
