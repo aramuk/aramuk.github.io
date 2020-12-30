@@ -1,25 +1,22 @@
-use crate::components::NavLink;
 use yew::prelude::*;
 
+use crate::components::NavLink;
+
 #[derive(Properties, Clone, PartialEq)]
-pub struct Props {
+pub struct HeaderProps {
     pub background: bool,
 }
 
 pub struct Header {
-    link: ComponentLink<Self>,
-    props: Props,
+    props: HeaderProps,
 }
 
-pub enum Msg {}
-
 impl Component for Header {
-    type Message = Msg;
-    type Properties = Props;
+    type Message = ();
+    type Properties = HeaderProps;
 
-    fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self { 
-            link,
+    fn create(props: Self::Properties, _link: ComponentLink<Self>) -> Self {
+        Header {
             props,
         }
     }

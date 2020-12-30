@@ -15,20 +15,14 @@ pub enum AppRoute {
     NotFound(Permissive<String>),
 }
 
-pub struct Model {
-    link: ComponentLink<Self>,
-}
-
-pub enum Msg {
-    Error,
-}
+pub struct Model {}
 
 impl Component for Model {
-    type Message = Msg;
+    type Message = ();
     type Properties = ();
 
-    fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self { link }
+    fn create(_: Self::Properties, _link: ComponentLink<Self>) -> Self {
+        Model {}
     }
 
     fn update(&mut self, _msg: Self::Message) -> ShouldRender {

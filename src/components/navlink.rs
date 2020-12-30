@@ -1,10 +1,8 @@
 use yew::prelude::*;
 use yew_router::components::RouterAnchor;
 
-use crate::app::AppRoute;
-
 #[derive(Properties, Clone, PartialEq)]
-pub struct Props {
+pub struct NavLinkProps {
     pub link_text: String,
     pub section_id: String,
     #[prop_or(true)]
@@ -14,21 +12,15 @@ pub struct Props {
 }
 
 pub struct NavLink {
-    link: ComponentLink<Self>,
-    props: Props,
-}
-
-pub enum Msg {
-    Clicked,
+    props: NavLinkProps,
 }
 
 impl Component for NavLink {
-    type Message = Msg;
-    type Properties = Props;
+    type Message = ();
+    type Properties = NavLinkProps;
 
-    fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self {
-            link,
+    fn create(props: Self::Properties, _link: ComponentLink<Self>) -> Self {
+        NavLink {
             props,
         }
     }

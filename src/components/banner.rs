@@ -1,7 +1,7 @@
 use yew::prelude::*;
 
 #[derive(Properties, Clone, PartialEq)]
-pub struct Props {
+pub struct BannerProps {
     pub title: String,
     #[prop_or_default]
     pub subtitle: Option<String>,
@@ -9,19 +9,15 @@ pub struct Props {
 }
 
 pub struct Banner {
-    link: ComponentLink<Self>,
-    props: Props,
+    props: BannerProps,
 }
 
-pub enum Msg {}
-
 impl Component for Banner {
-    type Message = Msg;
-    type Properties = Props;
+    type Message = ();
+    type Properties = BannerProps;
 
-    fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self { 
-            link,
+    fn create(props: Self::Properties, _link: ComponentLink<Self>) -> Self {
+        Banner { 
             props,  
         }
     }
