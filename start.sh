@@ -6,6 +6,7 @@ COMPILER_ERRORS=$(wasm-pack build --target web --out-name wasm --out-dir ./stati
 ps aux | grep 'http.server' | awk '{print $2}' | xargs kill &> /dev/null
 if [[ -z "$COMPILER_ERRORS" ]]; then
     cd ./static && python3 -m http.server ${PORT} &
+    sleep 1
     open "http://localhost:${PORT}"
 else 
     echo "${COMPILER_ERRORS}"

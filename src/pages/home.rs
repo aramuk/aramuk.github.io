@@ -4,6 +4,7 @@ use yew::web_sys::window;
 
 use crate::components::Header;
 use crate::components::Banner;
+use crate::components::Project;
 use crate::components::Section;
 
 pub struct HomePage {
@@ -71,38 +72,66 @@ impl Component for HomePage {
                         id="about"
                         title="Who am I?"
                         columns={1}
-                        rows={1}
+                        rows={2}
                     >
-                        <div>
-                            <p>{"I'd prefer to have Google work a little bit harder to find out, but you can find some relevant links below."}</p>
-                            <div class="contact-links">
-                                <div>
-                                    <a href="https://www.github.com/aramuk">
-                                        <span class="fa fa-github"></span>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="https://www.linkedin.com/in/aditeshk">
-                                        <span class="fa fa-linkedin-square"></span>
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href="mailto:aditeshk@uci.edu">
-                                        <span class="fa fa-envelope"></span>
-                                    </a>
-                                </div>
+                        <p>
+                            {"I'd prefer to have Google work a little bit harder to know that, \
+                            but you can find out here:"}
+                        </p>
+                        <div class="contact-links">
+                            <div>
+                                <a href="https://www.github.com/aramuk" class="media-icon">
+                                    <span class="fa fa-github"></span>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="https://www.linkedin.com/in/aditeshk" class="media-icon">
+                                    <span class="fa fa-linkedin-square"></span>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="mailto:aditeshk@uci.edu" class="media-icon">
+                                    <span class="fa fa-envelope"></span>
+                                </a>
                             </div>
                         </div>
                     </Section>
                     <Section 
                         id="projects"
                         title="Projects"
-                        columns={1}
-                        rows={1}
+                        columns={2}
+                        rows={2}
                     >
-                        <p>{"What have I done?"}</p>
+                        <Project 
+                            title="Histopathology"
+                            github_link="https://www.github.com/aramuk/histopathology"
+                            description="Convolutional neural networks that detect cancer in \
+                                histopathology slides a bit worse than a doctor can, but at least \
+                                they do it free."
+                        />
+                        <Project 
+                            title="Personal Website"
+                            github_link="https://www.github.com/aramuk/aramuk.github.io"
+                            description="My personal website, written in Rust, because WASM is cool \
+                                and any website that's easy to maintain doesn't truly capture the \
+                                spirit of web dev (See also: recursion)."
+                        />
+                        <Project 
+                            title="WalkWithMe"
+                            github_link="https://www.github.com/aramuk/WalkWithMe"
+                            description="Uber Pool, but for pedestrians. A mobile app that helps people \
+                                find friends to walk around with."
+                        />
+                        <Project 
+                            title="TNG"
+                            github_link="https://www.github.com/aramuk/tng"
+                            description="A library for the retrieval, processing, and management, of 
+                            image data from the Illustris simulation. No relation to that show \
+                            starring Sir Patrick Stewart."
+                        />
                     </Section>
                 </main>
+                <Footer />
             </div>
         }
     }

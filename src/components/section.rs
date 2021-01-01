@@ -44,7 +44,7 @@ impl Component for Section {
                 </div>
                 <div 
                     class="section-grid"
-                    style={format!("grid-template-columns: repeat({}, auto); grid-template-rows: repeat({}, auto);", self.props.columns, self.props.rows)}
+                    style={format!("grid-template-columns: repeat({}, 1fr); grid-template-rows: repeat({}, 1fr);", self.props.columns, self.props.rows)}
                 >
                     {for self.props.children.iter()}
                 </div>
