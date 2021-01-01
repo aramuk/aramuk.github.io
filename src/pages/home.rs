@@ -2,6 +2,7 @@ use wasm_bindgen::{closure::Closure, JsCast};
 use yew::prelude::*;
 use yew::web_sys::window;
 
+use crate::components::Footer;
 use crate::components::Header;
 use crate::components::Banner;
 use crate::components::Project;

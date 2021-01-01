@@ -29,6 +29,18 @@ header {
     vertical-align: middle;
 }
 
+footer {
+    width: 100vw;
+    margin-top: 2rem;
+    padding: 2rem 0 2rem 0;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1rem;
+    vertical-align: middle;
+    text-align: center;
+    background-color: var(--gray);
+}
+
 div, h1, h2, h3, h4, p {
     margin: 0;
     padding: 0;
