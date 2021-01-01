@@ -9,6 +9,7 @@ html {
     --pink-1: #ee9c95;
     --pink-2: #c39195;
     --pink-3: #a48b94;
+    background-color: var(--white);
 }
 
 body {
