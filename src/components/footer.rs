@@ -19,11 +19,11 @@ impl Component for Footer {
     }
 
     fn view(&self) -> Html {
-        // [TODO]: Figure out a way to dynamically get the year, 
+        // [TODO]: Figure out a way to dynamically get the year,
         //      since `chrono` doesn't work with WASM.
         html! {
             <footer>
-                {"Copyright 2020-2021 Aditesh Kumar."}
+                {"Copyright 2020-2022 Aditesh Kumar."}
             </footer>
         }
     }

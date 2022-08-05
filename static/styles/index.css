@@ -80,7 +80,7 @@ div, h1, h2, h3, h4, p {
     overflow: hidden;
     list-style-type: none;
     padding: 0;
-    margin: 1rem 0 1rem -2%;
+    margin: 1rem 0 1rem -5.65rem;
 }
 .navigation > ul:first-child {
     grid-column-start: 1;
