@@ -10,6 +10,7 @@ html {
     --pink-2: #c39195;
     --pink-3: #a48b94;
     background-color: var(--white);
+    scroll-behavior: smooth;
 }
 
 body {
@@ -47,6 +48,10 @@ div, h1, h2, h3, h4, p {
     padding: 0;
 }
 
+a:hover {
+    color: var(--pink-2);
+}
+
 .title {
     flex: 2;
     /* padding: 0 2rem 0 2rem; */
@@ -60,7 +65,7 @@ div, h1, h2, h3, h4, p {
     cursor: default;
 }
 
-.navigation {
+.navbar {
     position: absolute;
     width: 100%;
     padding: 0;
@@ -69,10 +74,10 @@ div, h1, h2, h3, h4, p {
     background-color: rgba(0, 0, 0, 0);
     transition: background-color 0.5s ease;
 }
-.navigation.bg {
+.navbar.bg {
     background-color: var(--gray);
 }
-.navigation > ul {
+.navbar > ul {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     grid-template-rows: auto;
@@ -82,53 +87,54 @@ div, h1, h2, h3, h4, p {
     padding: 0;
     margin: 1rem 0 1rem -5.65rem;
 }
-.navigation > ul:first-child {
+.navbar > ul:first-child {
     grid-column-start: 1;
     grid-column-end: 3;
 }
-.section-link {
+.nav-link {
+    /* display: block; */
     height: 2rem;
     line-height: 2rem;
-    /* font-size: 2rem; */
+    font-size: 2rem;
     vertical-align: middle;
     text-align: center;
     transform: skew(-45deg);
     transition: background-color 0.5s ease;
     flex: 1;
+    color: var(--gray);
 }
-.section-link:nth-child(2n + 1) {
+.nav-link:nth-child(2n + 1) {
     background-color: rgba(0, 0, 0, 0);
 }
-.section-link:nth-child(2n + 2) {
+.nav-link:nth-child(2n + 2) {
     background-color: rgba(0, 0, 0, 0);
 }
-.section-link:nth-child(3n) {
+.nav-link:nth-child(3n) {
     background-color: rgba(0, 0, 0, 0);
 }
-.section-link.bg:nth-child(2n + 1) {
+.nav-link.bg:nth-child(2n + 1) {
     background-color: var(--pink-3);
 }
-.section-link.bg:nth-child(2n + 2) {
+.nav-link.bg:nth-child(2n + 2) {
     background-color: var(--pink-2);
 }
-.section-link.bg:nth-child(3n) {
+.nav-link.bg:nth-child(3n) {
     background-color: var(--pink-1);
 }
-.section-link a {
-    display: block;
-    color: var(--white);
+.nav-link.bg a {
     text-decoration: none;
-    transform: skew(45deg);
+    color: var(--white);
 }
-.section-link a h3 {
+.nav-link-text {
+    transform: skew(45deg);
     margin: 0;
     font-size: 1rem;
     height: 2rem;
     line-height: 2rem;
     vertical-align: middle;
 }
-.section-link a h3:hover {
-    font-size: 1.05rem;
+.nav-link-text:hover {
+    text-decoration: underline;
 }
 
 .hero {
@@ -144,14 +150,14 @@ div, h1, h2, h3, h4, p {
 .hero-title { 
     position: absolute;
     top: 50%;
-    left: 2rem;
+    left: 5rem;
     font-size: 1rem;
 }
 .hero-title-box {
     display: block;
     padding: 0.5rem 5rem 0.5rem 5rem;
-    background-color: rgb(30, 30, 30, 0.7);
-    /* transform: skew(-45deg); */
+    background-color: rgb(54, 55, 59, 0.7);
+    border-radius: 1rem;
     text-align: left;
 }
 .hero-title-box h3, .hero-title-box p {
@@ -172,9 +178,13 @@ div, h1, h2, h3, h4, p {
     color: var(--gray);
     padding: 1rem 20% 1rem 20%;
 }
+.section a {
+    text-decoration: underline;
+}
 
 .section-title {
     text-align: left;
+    font-size: 1.5rem;
     border-left: 3px var(--pink-2) solid;
     padding: 0 0 0 1.5rem;
 }
@@ -187,6 +197,9 @@ div, h1, h2, h3, h4, p {
 }
 .section-grid p {
     margin: 0 10% 0 10%;
+    font-size: 1rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
 }
 
 .contact-links {
@@ -200,7 +213,7 @@ div, h1, h2, h3, h4, p {
     align-content: space-around;
     margin: 0 20% 0 20%;
 }
-.contact-links > div {
+.contact-links > li {
     flex: 1;
 }
 .contact-links a {
@@ -221,20 +234,18 @@ div, h1, h2, h3, h4, p {
 
 .project {
     border-radius: 1rem;
-    border: 1px solid var(--pink-2);
+    border: 2px solid var(--pink-2);
     padding: 1rem;
+    text-align: left;
 }
 .project-title {
     font-size: 1rem;
-    position: relative;
+    font-weight: bold;
 }
-.project-gh {
-    font-size: 1.5rem;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
 .project-desc {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.project-desc p { 
+    margin: 0 0 0 0.5rem;
 }

@@ -1,19 +1,40 @@
 use dioxus::prelude::*;
 
+#[derive(Props, PartialEq, Clone)]
+pub struct PublicationProps {
+    title: String,
+    authors: Vec<String>,
+    link: String,
+    venue: String,
+    notes: String,
+}
+
 #[component]
-pub fn Publication(title: String, link: String, description: String) -> Element {
+pub fn Publication(props: PublicationProps) -> Element {
     rsx! {
         div { class: "project",
             div { class: "project-title",
-                h3 { title }
-                div { class: "project-gh",
-                    a { class: "media-icon", href: link,
-                        span { class: "fa fa-github" }
-                    }
+                a {
+                    href: props.link,
+                    target: "_blank",
+                    h3 { "{props.title}" }
                 }
             }
             div { class: "project-desc",
-                p { "{description}" }
+                p {
+                    {props.authors.into_iter().enumerate().map(|(i, author)| {
+                        rsx! {
+                            {if i > 0 { rsx! { span {", "}}} else { rsx!{}}}
+                            {if author == "Aditesh Kumar" {
+                                rsx!{ b { "{author}" } }
+                            } else {
+                                rsx!{ span { "{author}" }}
+                            }}
+                        }
+                    })}
+                }
+                p { i { "{props.venue}" } }
+                p { "{props.notes}" }
             }
         }
     }

@@ -2,8 +2,6 @@ use dioxus::prelude::*;
 
 use crate::Route;
 
-
-
 // Shared navbar component.
 #[component]
 pub fn Navbar() -> Element {
