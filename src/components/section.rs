@@ -11,7 +11,8 @@ pub struct SectionProps {
 
 pub fn Section(props: SectionProps) -> Element {
     rsx! {
-        div { class: "section", id: props.id,
+        section { class: "section",
+            a { class: "anchor", id: props.id}
             div { class: "section-title",
                 h2 { "{props.title}" }
             }
