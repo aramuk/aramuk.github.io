@@ -1,5 +1,0 @@
-User-agent: *
-Crawl-delay: 125
-Disallow: /
-
-Sitemap: https://aramuk.github.io/sitemap.xml
