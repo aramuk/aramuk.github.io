@@ -8,6 +8,7 @@ edition = "2021"
 
 [dependencies]
 dioxus = { version = "0.6.0", features = ["router"] }
+glib = "0.20.0"
 wasm-bindgen = "0.2.100"
 web-sys = "0.3.77"
 
