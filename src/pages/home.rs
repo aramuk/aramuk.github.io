@@ -7,7 +7,7 @@ use crate::components::hero::*;
 use crate::components::publication::*;
 use crate::components::section::*;
 
-const HEADER_BACKGROUND_THRESHOLD: f64 = 100.;
+const HEADER_BACKGROUND_RATIO: f64 = 0.1;
 
 // Home page
 #[component]
@@ -26,7 +26,7 @@ pub fn Home() -> Element {
 
     rsx! {
         body {
-            Header { scrolled: scroll_y() > HEADER_BACKGROUND_THRESHOLD }
+            Header { scrolled: scroll_y() > HEADER_BACKGROUND_RATIO * window().unwrap().inner_height().unwrap().as_f64().unwrap() }
             main {
                 id: "main",
                 Hero {
@@ -68,30 +68,34 @@ pub fn Home() -> Element {
                             li {
                                 a {
                                     class: "media-icon",
+                                    aria_label: "Send an email to aditesh@stanford.edu",
                                     href: "mailto:aditesh@stanford.edu",
                                     style: "font-size: 1.25rem; line-height: 1.25rem; margin-top: 0.5rem;",
-                                    span { class: "fa fa-envelope" }
+                                    i { aria_hidden: true, class: "fa fa-envelope" }
                                 }
                             }
                             li {
                                 a {
                                     class: "media-icon",
+                                    aria_label: "Open Aditesh's Google Scholar page.",
                                     href: "https://scholar.google.com/citations?user=QayDh0IAAAAJ",
-                                    span { class: "ai ai-google-scholar" }
+                                    i { aria_hidden: true, class: "ai ai-google-scholar" }
                                 }
                             }
                             li {
                                 a {
                                     class: "media-icon",
+                                    aria_label: "Open Aditesh's Semantic Scholar page.",
                                     href: "https://www.semanticscholar.org/author/Aditesh-Kumar/2219660996",
-                                    span { class: "ai ai-semantic-scholar" }
+                                    i { aria_hidden: true, class: "ai ai-semantic-scholar" }
                                 }
                             }
                             li {
                                 a {
                                     class: "media-icon",
+                                    aria_label: "Open Aditesh's Github.",
                                     href: "https://www.github.com/aramuk",
-                                    span { class: "fa fa-github" }
+                                    i { aria_hidden: true, class: "fa fa-github" }
                                 }
                             }
                         }

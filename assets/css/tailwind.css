@@ -571,7 +571,7 @@ html {
   --pink-1: #ee9c95;
   --pink-2: #c39195;
   --pink-3: #a48b94;
-  background-color: var(--white);
+  background: var(--gray);
   scroll-behavior: smooth;
 }
 
@@ -595,11 +595,10 @@ header {
 
 footer {
   width: 100vw;
-  margin-top: 2rem;
-  /* padding: 2rem 0 2rem 0; */
+  margin: 2rem 0 2rem 0;
   height: 4rem;
   line-height: 4rem;
-  font-size: 1rem;
+  font-size: 0.75rem;
   vertical-align: middle;
   text-align: center;
   background-color: var(--gray);
@@ -610,7 +609,7 @@ div, h1, h2, h3, h4, p {
   padding: 0;
 }
 
-a:hover {
+section a:hover {
   color: var(--pink-2);
 }
 
@@ -638,10 +637,6 @@ a:hover {
   transition: background-color 0.5s ease;
 }
 
-.navbar.bg {
-  background-color: var(--gray);
-}
-
 .navbar > ul {
   display: grid;
   grid-template-columns: repeat(4, auto);
@@ -656,6 +651,7 @@ a:hover {
 .navbar > ul:first-child {
   grid-column-start: 1;
   grid-column-end: 3;
+  padding-left: 3rem;
 }
 
 .nav-link {
@@ -669,6 +665,15 @@ a:hover {
   transition: background-color 0.5s ease;
   flex: 1;
   color: var(--gray);
+}
+
+.navbar.bg .nav-link {
+  box-shadow: rgba(0,0,0,0.5) 0 0.25rem,
+        rgba(0,0,0,0.5) 0 -0.25rem;
+}
+
+.navbar.bg .nav-link:last-of-type {
+  box-shadow: inherit, rgba(0,0,0,0.5) 0.02rem 0 0;
 }
 
 .nav-link:nth-child(2n + 1) {
@@ -728,13 +733,21 @@ a:hover {
     padding-right: 1.25rem;
   }
 
+  .navbar.bg .nav-link {
+    box-shadow: rgba(0,0,0,0.5) 0.02rem 0;
+  }
+
+  .navbar.bg .nav-link:last-of-type {
+    box-shadow: inherit, rgba(0,0,0,0.5) 0 0.25rem;
+  }
+
   .nav-link:nth-child(2) {
-    padding-left: 0.75rem;
+    padding-left: 0.65rem;
     margin-right: 2rem;
   }
 
   .nav-link:nth-child(3) {
-    padding-left: 1.25rem;
+    padding-left: 1.3rem;
     margin-right: 4rem;
   }
 
@@ -802,7 +815,7 @@ a:hover {
 .section {
   background-color: var(--white);
   color: var(--gray);
-  padding: 1rem 20% 1rem 20%;
+  padding: 2rem 20% 2rem 20%;
 }
 
 .section a {
@@ -811,7 +824,7 @@ a:hover {
 
 @media (max-width: 720px) {
   .section {
-    padding: 1rem 2rem 1rem 2rem;
+    padding: 2rem 2rem 2rem 2rem;
   }
 }
 
